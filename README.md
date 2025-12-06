@@ -4,7 +4,7 @@
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 <p align="center">
-  <img src="https://raw.githubusercontent.com/itsAnimation/AnimateItNow/main/images/logo.png" alt="AnimateItNow Logo" width="120"/>
+  <img src="https://raw.githubusercontent.com/AnujShrivastava01/AnimateItNow/main/images/logo.png" alt="AnimateItNow Logo" width="120"/>
   <br>
   <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
     <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Verdana" fill="#6C63FF">
@@ -27,9 +27,9 @@
     <a href="https://animate-it-now.netlify.app/"><strong>Explore the Live Demo »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/itsAnimation/AnimateItNow/issues">Report a Bug</a>
+    <a href="https://github.com/AnujShrivastava01/AnimateItNow/issues">Report a Bug</a>
     ·
-    <a href="https://github.com/itsAnimation/AnimateItNow/issues">Request a Feature</a>
+    <a href="https://github.com/AnujShrivastava01/AnimateItNow/issues">Request a Feature</a>
 </p>
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
@@ -83,7 +83,7 @@ AnimateItNow empowers developers to create stunning, responsive UI animations wi
 
 1. Clone the Repository
    ```bash
-   git clone https://github.com/itsAnimation/AnimateItNow.git
+   git clone https://github.com/AnujShrivastava01/AnimateItNow.git
    cd AnimateItNow 
    ```
 Open the Project
@@ -117,7 +117,7 @@ To start working with AnimateItNow locally, follow one of the options below base
 ### Option 1: Basic Setup (Quick Start)
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/itsAnimation/AnimateItNow.git
+git clone https://github.com/AnujShrivastava01/AnimateItNow.git
 cd AnimateItNow
 ```
 
@@ -429,12 +429,12 @@ This project is licensed under the MIT License .
 
 ## 🙌 Acknowledgments
 💖 Our Amazing Contributors
-<p align="center"> <a href="https://github.com/itsAnimation/AnimateItnow/graphs/contributors"> <img src="https://api.vaunt.dev/v1/github/entities/itsAnimation/repositories/AnimateItnow/contributors?format=svg&limit=54" width="700" height="250" /> </a> </p>
+<p align="center"> <a href="https://github.com/AnujShrivastava01/AnimateItnow/graphs/contributors"> <img src="https://api.vaunt.dev/v1/github/entities/AnujShrivastava01/repositories/AnimateItnow/contributors?format=svg&limit=54" width="700" height="250" /> </a> </p>
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## 🌟 Project Admin
-<p align="center"> <img src="https://raw.githubusercontent.com/itsAnimation/AnimateItNow/main/images/pa.png" width="600px;" alt="Project Admin"/><br /> <br/> <a href="https://github.com/AnujShrivastava01"> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/> </a> <a href="https://www.linkedin.com/in/anujshrivastava1/"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/> </a> </p><p align="center"> Made with ❤ by Anuj and Contributors </p>
+<p align="center"> <img src="https://raw.githubusercontent.com/AnujShrivastava01/AnimateItNow/main/images/pa.png" width="600px;" alt="Project Admin"/><br /> <br/> <a href="https://github.com/AnujShrivastava01"> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/> </a> <a href="https://www.linkedin.com/in/anujshrivastava1/"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/> </a> </p><p align="center"> Made with ❤ by Anuj and Contributors </p>
 <div align="center">
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
@@ -443,7 +443,7 @@ This project is licensed under the MIT License .
 If you find this project helpful, please give it a star! ⭐
 
 
-<img src="https://api.star-history.com/svg?repos=itsAnimation/AnimateItNow&type=Date" width="100%">
+<img src="https://api.star-history.com/svg?repos=AnujShrivastava01/AnimateItNow&type=Date" width="100%">
 
 
 </div> 
