@@ -810,13 +810,21 @@
       let filteredContributors = [];
 
       // GitHub API headers with hardcoded token
+      // IMPORTANT: Make sure this token has 'public_repo' scope and hasn't been revoked
+      const GITHUB_TOKEN = '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'.trim();
+      
       function getApiHeaders() {
-        const token = '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';
+        // Validate token format
+        if (!GITHUB_TOKEN || GITHUB_TOKEN.length < 10) {
+          console.error('❌ Invalid token format');
+          throw new Error('GitHub token is missing or invalid');
+        }
+        
         return {
           'Accept': 'application/vnd.github.v3+json',
           'User-Agent': 'AnimateItNow-Contributors',
-          // Classic tokens use 'token' prefix
-          'Authorization': `token ${token}`
+          // Classic tokens use 'token' prefix (not 'Bearer')
+          'Authorization': `token ${GITHUB_TOKEN}`
         };
       }
 

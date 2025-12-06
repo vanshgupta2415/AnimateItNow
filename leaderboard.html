@@ -2030,13 +2030,20 @@
     let filteredData = null;
 
     // GitHub API headers with hardcoded token
-    const GITHUB_TOKEN = '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';
+    // IMPORTANT: Make sure this token has 'public_repo' scope and hasn't been revoked
+    const GITHUB_TOKEN = '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'.trim();
     
     function getApiHeaders() {
+        // Validate token format
+        if (!GITHUB_TOKEN || GITHUB_TOKEN.length < 10) {
+            console.error('❌ Invalid token format');
+            throw new Error('GitHub token is missing or invalid');
+        }
+        
         return {
             'Accept': 'application/vnd.github.v3+json',
             'User-Agent': 'AnimateItNow-Leaderboard',
-            // Classic tokens use 'token' prefix
+            // Classic tokens use 'token' prefix (not 'Bearer')
             'Authorization': `token ${GITHUB_TOKEN}`
         };
     }
@@ -2044,25 +2051,53 @@
     // Validate token by making a test request
     async function validateToken() {
         try {
+            const headers = getApiHeaders();
+            console.log('🔍 Testing token... (first 10 chars:', GITHUB_TOKEN.substring(0, 10) + '...)');
+            
             const response = await fetch('https://api.github.com/user', {
                 method: 'GET',
-                headers: getApiHeaders(),
-                mode: 'cors'
+                headers: headers,
+                mode: 'cors',
+                cache: 'no-cache'
             });
             
+            const responseText = await response.text();
+            let errorData = {};
+            try {
+                errorData = JSON.parse(responseText);
+            } catch (e) {
+                errorData = { message: responseText || 'Unknown error' };
+            }
+            
             if (response.status === 401) {
-                const errorData = await response.json().catch(() => ({}));
-                console.error('Token validation failed:', errorData);
-                return { valid: false, error: errorData.message || 'Bad credentials' };
+                console.error('❌ Token validation failed (401):', errorData);
+                console.error('Response status:', response.status);
+                console.error('Response headers:', {
+                    'X-RateLimit-Remaining': response.headers.get('X-RateLimit-Remaining'),
+                    'X-RateLimit-Reset': response.headers.get('X-RateLimit-Reset')
+                });
+                
+                let errorMsg = 'Bad credentials';
+                if (errorData.message) {
+                    errorMsg = errorData.message;
+                } else if (errorData.documentation_url) {
+                    errorMsg += `. See: ${errorData.documentation_url}`;
+                }
+                
+                return { 
+                    valid: false, 
+                    error: errorMsg,
+                    details: errorData
+                };
             }
             
             if (response.ok) {
-                const userData = await response.json().catch(() => ({}));
+                const userData = JSON.parse(responseText);
                 console.log('✅ Token validated successfully. Authenticated as:', userData.login || 'Unknown');
                 return { valid: true, user: userData.login };
             }
             
-            return { valid: false, error: `Unexpected status: ${response.status}` };
+            return { valid: false, error: `Unexpected status: ${response.status}`, details: errorData };
         } catch (error) {
             console.error('Token validation error:', error);
             return { valid: false, error: error.message };
@@ -2340,7 +2375,15 @@
             console.log("🔍 Validating GitHub token...");
             const tokenValidation = await validateToken();
             if (!tokenValidation.valid) {
-                throw new Error(`Token validation failed: ${tokenValidation.error}. Please check your GitHub token has the 'public_repo' scope.`);
+                const errorDetails = tokenValidation.details ? JSON.stringify(tokenValidation.details, null, 2) : '';
+                throw new Error(
+                    `Token validation failed: ${tokenValidation.error}\n\n` +
+                    `Possible causes:\n` +
+                    `1. Token is invalid or expired - Regenerate it at: https://github.com/settings/tokens\n` +
+                    `2. Token doesn't have 'public_repo' scope - Check token permissions\n` +
+                    `3. Token was revoked - Create a new token\n\n` +
+                    `Error details: ${errorDetails}`
+                );
             }
             
             console.log("🔄 Fetching fresh data with token...");
