@@ -32,6 +32,10 @@
       .footer-left h2 {
             margin-bottom: 15px;
             background: linear-gradient(to right, var(--primary), var(--accent));
+            background-clip: text;
+            background-clip: text;
+            background-clip: text;
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -124,15 +128,14 @@
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-15px); }
       }
-      
       .contact-heading h1 {
         font-size: 3rem;
         font-weight: 700;
         margin: 0;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
         position: relative;
         padding-bottom: 15px;
       }
@@ -180,7 +183,7 @@
         padding: 60px 20px;
         max-width: 1200px;
         margin: 0 auto;
-        z-index:-1;
+        
       }
       
       .contact-container {
@@ -708,16 +711,15 @@
           <!-- 📧 Contact Form -->
           <form class="contact-form" id="contactForm">
             <div class="form-group scroll-fade">
-              <label for="name"> Name</label>
+              <label for="name"> Name:</label>
               <div class="form-input">
                 <i class="fa-solid fa-user"></i>
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="username"
                   placeholder="Enter your name"
-                  required
-                />
+                  required/>
               </div>
             </div>
 
